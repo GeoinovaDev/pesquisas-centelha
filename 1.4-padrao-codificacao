@@ -1,0 +1,86 @@
+Padrão de Codificação e Documentação - Projeto GeoInova
+Versão: 1.0
+Data: 30/02/2023
+Responsável: Diego Roberto (CTO)
+
+1. Introdução
+Este documento estabelece os padrões de codificação, estruturação e documentação a serem seguidos no desenvolvimento do projeto GeoInova. Ele tem como objetivo garantir consistência, clareza e eficiência nos processos de desenvolvimento, manutenção e expansão do sistema.
+
+Propósito:
+
+Fornecer um guia de boas práticas para a equipe.
+Facilitar a colaboração entre os desenvolvedores.
+Melhorar a qualidade do código e reduzir o tempo de manutenção.
+Escopo:
+
+Aplicável a todos os módulos e repositórios do projeto.
+Inclui desenvolvimento de APIs, integração de algoritmos e construção de interfaces.
+2. Padrões de Codificação
+2.1 Nomeação de Variáveis e Métodos
+Variáveis devem ser nomeadas em camelCase. Exemplo: processedImage.
+Métodos devem ser nomeados em verboCamelCase. Exemplo: processImage().
+Classes devem ser nomeadas em PascalCase. Exemplo: ImageProcessor.
+Constantes devem estar em UPPER_SNAKE_CASE. Exemplo: MAX_RETRIES.
+2.2 Estrutura de Diretórios
+src/: Código-fonte principal.
+tests/: Testes automatizados.
+docs/: Documentação técnica.
+configs/: Arquivos de configuração.
+2.3 Uso de Comentários
+Comentários de linha: Explicam a funcionalidade imediata. Exemplo:
+python
+Copiar código
+# Calcula o NDVI com base nas bandas
+def calculate_ndvi(band_red, band_nir):
+    return (band_nir - band_red) / (band_nir + band_red)
+Docstrings: Obrigatório em todos os métodos e classes. Exemplo:
+python
+Copiar código
+"""
+Classe responsável por processar imagens de satélite.
+
+Métodos:
+    process_image(): Aplica filtros e retorna a imagem processada.
+"""
+2.4 Formatação de Código
+Adotar a especificação PEP8 para Python.
+Utilizar espaçamento de 4 espaços por nível de indentação.
+2.5 Controle de Versão
+Commits devem seguir o formato:
+markdown
+Copiar código
+[Tipo]: Descrição breve do commit
+
+Exemplos:
+[Feature]: Implementa cálculo de NDVI.
+[Fix]: Corrige erro na interpolação bilinear.
+Branches devem ser nomeadas como: feature/nome-funcionalidade ou fix/nome-correcao.
+3. Ferramentas e Tecnologias
+Linguagens: Python, JavaScript.
+Frameworks: Flask, TensorFlow, OpenCV.
+Versionamento: GitHub/GitLab.
+Testes: Pytest, Selenium.
+4. Requisitos de Documentação
+4.1 Documentação de Código
+Todas as funções e classes devem conter docstrings explicando o propósito, parâmetros e retorno.
+4.2 Documentação de APIs
+Criar documentação detalhada para cada endpoint utilizando Swagger ou Postman.
+4.3 Logs de Atualização
+Registrar alterações significativas em um arquivo CHANGELOG.md no formato:
+markdown
+Copiar código
+## [Versão 1.0.0] - 30/02/2023
+- Adicionado cálculo de NDVI.
+- Integrada API de detecção de mudanças.
+5. Processo de Revisão de Código
+Todo código deve passar por Pull Request antes de ser mergeado na branch principal.
+Checklist para revisão:
+Segue os padrões de codificação?
+Está devidamente comentado?
+Inclui testes para novas funcionalidades?
+6. Gerenciamento de Problemas e Bugs
+Registro: Utilizar o GitHub Issues ou Jira para registrar problemas.
+Prioridades:
+Alta: Impacta clientes diretamente.
+Média: Reduz performance ou bloqueia desenvolvedores.
+Baixa: Melhorias visuais ou refatorações.
